@@ -25,6 +25,7 @@ API: pytest -m api test/test_api.py
 UI: pytest -m ui test/test_ui.py 
 --- 
  Структура проекта:
+ ```
 repo_diplom/
 ├── pages_api/                # Папка с Page Objects api
 │   ├── __init__.py           # Обязательный пустой файл
@@ -49,6 +50,7 @@ repo_diplom/
 ├── requirements.txt          # Список библиотек (selenium, requests и др.)
 ├── .gitignore.txt            # Список файлов, которые НЕ идут в Git
 └── README.md                 # Описание проекта и инструкция по запуску
+```
 
 ## Инструкция по запуску тестов для формирования отчета Allure
 
