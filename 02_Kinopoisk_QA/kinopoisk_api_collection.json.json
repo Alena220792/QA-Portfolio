@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "fb7084c9-9755-48d9-8ca2-8ef503753402",
+		"name": "Курсовая 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47425742",
+		"_collection_link": "https://alena2207-4905493.postman.co/workspace/skypro~deafb439-ea39-46ca-a1ba-3ab3d6492fcc/collection/47425742-fb7084c9-9755-48d9-8ca2-8ef503753402?action=share&source=collection_link&creator=47425742"
+	},
+	"item": [
+		{
+			"name": "Позитивные проверки",
+			"item": [
+				{
+					"name": "поиск по кириллице",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}movie/search?page=1&limit=10&query=легенда",
+							"host": [
+								"{{baseURL}}movie"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "легенда"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=10&query=%D0%BB%D0%B5%D0%B3%D0%B5%D0%BD%D0%B4%D0%B0' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск по актеру на латинице",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}person/search?page=1&limit=10&query=Cameron%20Diaz",
+							"host": [
+								"{{baseURL}}person"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "Cameron%20Diaz"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/person/search?page=1&limit=10&query=Cameron%20Diaz' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск по цифрам",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}movie/search?page=1&limit=10&query=1%2B1",
+							"host": [
+								"{{baseURL}}movie"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "1%2B1"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=10&query=1%2B1' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Негативные проверки",
+			"item": [
+				{
+					"name": "Поиск спецсимволами",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}movie/search?page=1&limit=10&query=\"@@))::\"\"';; ",
+							"host": [
+								"{{baseURL}}movie"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "\"@@))::\"\"';; "
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=10&query=1%2B1' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск по несуществующему актеру",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}person/search?page=1&limit=10&query=Вааася Пупкиииин",
+							"host": [
+								"{{baseURL}}person"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "Вааася Пупкиииин"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/person/search?page=1&limit=10&query=Cameron%20Diaz' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск пробелами",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}movie/search?page=1&limit=10&query=     ",
+							"host": [
+								"{{baseURL}}movie"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "     "
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=10&query=1%2B1' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск несуществующей страницы",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}movie?page=12555555555555555555555555555&limit=10",
+							"host": [
+								"{{baseURL}}movie"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "12555555555555555555555555555"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/movie?page=12555555555555555555555555555&limit=10' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск по несуществующему id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}movie/1257888888888888",
+							"host": [
+								"{{baseURL}}movie"
+							],
+							"path": [
+								"1257888888888888"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://api.kinopoisk.dev/v1.4/movie/1257888888888888' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'X-API-KEY: XDE247P-5QA45GQ-NWV8VJ8-RPJ06DY'"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		}
+	]
+}
